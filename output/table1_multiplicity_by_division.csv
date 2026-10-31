@@ -1,0 +1,13 @@
+division,name,sic_codes,one_to_many,share_one_to_many
+A,"Agriculture, forestry, fishing",58,16,0.276
+B,Mining,31,13,0.419
+C,Construction,26,13,0.5
+D,Manufacturing,459,178,0.388
+E,"Transportation, communications, utilities",67,26,0.388
+F,Wholesale trade,69,13,0.188
+G,Retail trade,64,20,0.312
+H,"Finance, insurance, real estate",53,7,0.132
+I,Services,150,52,0.347
+J,Public administration,27,4,0.148
+—,Auxiliary establishments (Census 'Aux'),1,0,0.0
+All,All divisions,1005,342,0.34

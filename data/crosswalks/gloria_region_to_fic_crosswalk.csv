@@ -1,0 +1,165 @@
+gloria_region,fic,region_type,in_our_list
+Afghanistan,AFG,country,no
+Albania,ALB,country,no
+Algeria,DZA,country,no
+Angola,AGO,country,no
+Argentina,ARG,country,yes
+Armenia,ARM,country,no
+Australia,AUS,country,yes
+Austria,AUT,country,yes
+Azerbaijan,AZE,country,no
+Bahamas,BHS,country,yes
+Bahrain,BHR,country,yes
+Bangladesh,BGD,country,yes
+Belarus,BLR,country,no
+Belgium,BEL,country,yes
+Belize,BLZ,country,no
+Benin,BEN,country,no
+Bhutan,BTN,country,no
+Bolivia,BOL,country,no
+Bosnia and Herzegovina,BIH,country,no
+Botswana,BWA,country,yes
+Brazil,BRA,country,yes
+Brunei Darussalam,BRN,country,no
+Bulgaria,BGR,country,yes
+Burkina Faso,BFA,country,no
+Burundi,BDI,country,no
+CSSR/Czech Republic (1990/1991),CZE,historical,yes
+Cambodia,KHM,country,no
+Cameroon,CMR,country,no
+Canada,CAN,country,yes
+Central African Republic,CAF,country,no
+Chad,TCD,country,no
+Chile,CHL,country,yes
+China,CHN,country,yes
+Colombia,COL,country,yes
+Costa Rica,CRI,country,no
+Cote d'Ivoire,CIV,country,yes
+Croatia,HRV,country,yes
+Cuba,CUB,country,no
+Cyprus,CYP,country,yes
+DR Congo,COD,country,no
+DR Yemen (Aden),YEM,historical,no
+Denmark,DNK,country,yes
+Djibouti,DJI,country,no
+Dominican Republic,DOM,country,no
+Ecuador,ECU,country,yes
+Egypt,EGY,country,yes
+El Salvador,SLV,country,no
+Equatorial Guinea,GNQ,country,no
+Eritrea,ERI,country,no
+Estonia,EST,country,yes
+Ethiopia/DR Ethiopia (1992/1993),ETH,historical,no
+Finland,FIN,country,yes
+France,FRA,country,yes
+Gabon,GAB,country,no
+Gambia,GMB,country,no
+Georgia,GEO,country,no
+Germany,DEU,country,yes
+Ghana,GHA,country,yes
+Greece,GRC,country,yes
+Guatemala,GTM,country,no
+Guinea,GIN,country,no
+Haiti,HTI,country,no
+Honduras,HND,country,no
+Hong Kong,HKG,country,yes
+Hungary,HUN,country,yes
+Iceland,ISL,country,yes
+India,IND,country,yes
+Indonesia,IDN,country,yes
+Iran,IRN,country,no
+Iraq,IRQ,country,no
+Ireland,IRL,country,yes
+Israel,ISR,country,yes
+Italy,ITA,country,yes
+Jamaica,JAM,country,yes
+Japan,JPN,country,yes
+Jordan,JOR,country,yes
+Kazakhstan,KAZ,country,yes
+Kenya,KEN,country,yes
+Kuwait,KWT,country,yes
+Kyrgyzstan,KGZ,country,no
+Laos,LAO,country,no
+Latvia,LVA,country,yes
+Lebanon,LBN,country,yes
+Liberia,LBR,country,no
+Libya,LBY,country,no
+Lithuania,LTU,country,yes
+Luxembourg,LUX,country,yes
+Macedonia,MKD,country,no
+Madagascar,MDG,country,no
+Malawi,MWI,country,yes
+Malaysia,MYS,country,yes
+Mali,MLI,country,no
+Malta,MLT,country,yes
+Mauritania,MRT,country,no
+Mexico,MEX,country,yes
+Moldova,MDA,country,no
+Mongolia,MNG,country,no
+Morocco,MAR,country,yes
+Mozambique,MOZ,country,no
+Myanmar,MMR,country,no
+Namibia,NAM,country,yes
+Nepal,NPL,country,no
+Netherlands,NLD,country,yes
+New Zealand,NZL,country,yes
+Nicaragua,NIC,country,no
+Niger,NGA,country,yes
+Nigeria,NGA,country,yes
+North Korea,PRK,country,no
+Norway,NOR,country,yes
+Oman,OMN,country,yes
+Pakistan,PAK,country,yes
+Palestine,PSE,country,yes
+Panama,PAN,country,yes
+Papua New Guinea,PNG,country,yes
+Paraguay,PRY,country,no
+Peru,PER,country,yes
+Philippines,PHL,country,yes
+Poland,POL,country,yes
+Portugal,PRT,country,yes
+Qatar,QAT,country,yes
+Rep Congo,COG,country,no
+Rest of Africa,,aggregate,no
+Rest of Americas,,aggregate,no
+Rest of Asia-Pacific,,aggregate,no
+Rest of Europe,,aggregate,no
+Romania,ROU,country,yes
+Rwanda,RWA,country,no
+Saudi Arabia,SAU,country,yes
+Senegal,SEN,country,yes
+Sierra Leone,SLE,country,no
+Singapore,SGP,country,yes
+Slovakia,SVK,country,yes
+Slovenia,SVN,country,yes
+Somalia,SOM,country,no
+South Africa,ZAF,country,yes
+South Korea,KOR,country,yes
+South Sudan,SSD,country,no
+Spain,ESP,country,yes
+Sri Lanka,LKA,country,yes
+Sudan/North Sudan (2010/2011),SDN,historical,no
+Sweden,SWE,country,yes
+Switzerland,CHE,country,yes
+Syria,SYR,country,no
+Tajikistan,TJK,country,no
+Tanzania,TZA,country,yes
+Thailand,THA,country,yes
+Togo,TGO,country,no
+Tunisia,TUN,country,yes
+Turkey,TUR,country,yes
+Turkmenistan,TKM,country,no
+USSR/Russian Federation (1990/1991),RUS,historical,yes
+Uganda,UGA,country,yes
+Ukraine,UKR,country,yes
+United Arab Emirates,ARE,country,yes
+United Kingdom,GBR,country,yes
+United States of America,USA,country,yes
+Uruguay,URY,country,no
+Uzbekistan,UZB,country,no
+Venezuela,VEN,country,yes
+Viet Nam,VNM,country,yes
+Yemen Arab Republic/Yemen (1990/1991),YEM,historical,no
+Yugoslavia/Serbia (1991/1992),SRB,historical,yes
+Zambia,ZMB,country,yes
+Zimbabwe,ZWE,country,yes

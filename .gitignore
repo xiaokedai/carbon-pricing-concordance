@@ -1,0 +1,6 @@
+# Dolphin & Merkle ECP files (download from Zenodo; see data/README.md)
+data/ecp/
+# large derived outputs
+output/firms_with_ecp.csv
+__pycache__/
+.DS_Store

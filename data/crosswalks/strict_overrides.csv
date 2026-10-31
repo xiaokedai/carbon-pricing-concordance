@@ -1,0 +1,3 @@
+sic_1987,gloria_sector_override,reason
+1311,Petroleum extraction,"Three candidates (hard coal, petroleum extraction, gas extraction), one ISIC class each; the modal rule's tie-break takes the first listed, 'Hard coal'. The SIC title is crude petroleum and natural gas; 'Gas extraction' is the alternative if segment data exist."
+7372,Publishing,"Two candidates (ISIC 1820 reproduction of recorded media -> Printing; ISIC 5820 software publishing -> Publishing), one ISIC class each; the tie-break takes 'Printing'. Prepackaged software is software publishing."

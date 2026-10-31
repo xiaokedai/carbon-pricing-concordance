@@ -1,0 +1,421 @@
+isic_rev4,isic_title,gloria_sector,relation,gloria_in_file
+0111,"Growing of cereals (except rice), leguminous crops and oil seeds",Growing cereals n.e.c,1:n(GLORIA finer),yes
+0112,Growing of rice,Growing rice,mapped,yes
+0113,"Growing of vegetables and melons, roots and tubers","Growing vegetables, roots, tubers",mapped,yes
+0114,Growing of sugar cane,Growing sugar beet and cane,mapped,yes
+0115,Growing of tobacco,Growing tobacco,mapped,yes
+0116,Growing of fibre crops,Growing fibre crops,mapped,yes
+0119,Growing of other non-perennial crops,Growing crops n.e.c.,mapped,yes
+0121,Growing of grapes,Growing grapes,mapped,yes
+0122,Growing of tropical and subtropical fruits,Growing fruits and nuts,mapped,yes
+0123,Growing of citrus fruits,Growing fruits and nuts,mapped,yes
+0124,Growing of pome fruits and stone fruits,Growing fruits and nuts,mapped,yes
+0125,Growing of other tree and bush fruits and nuts,Growing fruits and nuts,mapped,yes
+0126,Growing of oleaginous fruits,Growing fruits and nuts,mapped,yes
+0127,Growing of beverage crops,"Growing beverage crops (coffee, tea etc)",mapped,yes
+0128,"Growing of spices, aromatic, drug and pharmaceutical crops","Growing spices, aromatic, drug and pharmaceutical crops",mapped,yes
+0129,Growing of other perennial crops,Growing crops n.e.c.,mapped,yes
+012X,Growing of perennial crops,Growing crops n.e.c.,mapped,yes
+0130,Plant propagation,Seeds and plant propagation,mapped,yes
+0141,Raising of cattle and buffaloes,Raising of cattle,mapped,yes
+0142,Raising of horses and other equines,Raising of animals n.e.c.; services to agriculture,mapped,yes
+0143,Raising or camels and camelids,Raising of animals n.e.c.; services to agriculture,mapped,yes
+0144,Raising of sheep and goats,Raising of sheep and goats,mapped,yes
+0145,Raising of swine/pigs,Raising of swine/pigs,mapped,yes
+0146,Raising of poultry,Raising of poultry,mapped,yes
+0149,Raising of other animals,Raising of animals n.e.c.; services to agriculture,mapped,yes
+014X,Animal production,Raising of animals n.e.c.; services to agriculture,mapped,yes
+0150,Mixed farming,Raising of animals n.e.c.; services to agriculture,mapped,yes
+0161,Support activities for crop production,Raising of animals n.e.c.; services to agriculture,mapped,yes
+0162,Support activities for animal production,Raising of animals n.e.c.; services to agriculture,mapped,yes
+0163,Post-harvest crop activities,Raising of animals n.e.c.; services to agriculture,mapped,yes
+0164,Seed processing for propagation,Seeds and plant propagation,mapped,yes
+0170,"Hunting, trapping, and related service activities",Raising of animals n.e.c.; services to agriculture,mapped,yes
+0210,Silvaculture and other forestry activities,Forestry and logging,mapped,yes
+0220,Logging,Forestry and logging,mapped,yes
+0230,Gathering of non-wood forest products,Forestry and logging,mapped,yes
+0240,Support services to forestry,Forestry and logging,mapped,yes
+0311,Marine fishing,Fishing,mapped,yes
+0312,Freshwater fishing,Fishing,mapped,yes
+0321,Marine aquaculture,Fishing,mapped,yes
+0322,Freshwater aquaculture,Fishing,mapped,yes
+0510,Mining of hard coal,Hard coal,mapped,yes
+0520,Mining of lignite,Lignite and peat,mapped,yes
+0610,Extraction of crude petroleum,Petroleum extraction,mapped,yes
+0620,Extraction of natural gas,Gas extraction,mapped,yes
+0710,Mining of iron ores,Iron ores,mapped,yes
+0721,Mining or uranium and thorium ores,Uranium ores,mapped,yes
+0729,Mining of other non-ferrous metal ores,Other non-ferrous ores,1:n(GLORIA finer),yes
+0810,"Quarrying of stone, sand and clay","Quarrying of stone, sand and clay",mapped,yes
+0891,Mining of chemical and fertilizer minerals,Chemical and fertilizer minerals,mapped,yes
+0892,Extraction of peat,Lignite and peat,mapped,yes
+0893,Extraction of salt,Extraction of salt,mapped,yes
+0899,Other mining and quarrying n.e.c.,Mining and quarrying n.e.c.; services to mining,mapped,yes
+0910,Support activities for petroleum and natural gas extraction,Mining and quarrying n.e.c.; services to mining,mapped,yes
+0990,Support activities for other mining and quarrying,Mining and quarrying n.e.c.; services to mining,mapped,yes
+1010,Processing and preserving of meat,Other meat products,1:n(GLORIA finer),yes
+1020,"Processing and preserving of fish, crustaceans and mulluscs",Fish products,mapped,yes
+1030,Processing and preserving of fruits and vegetables,Fruit products,mapped,yes
+1040,Manufacture of vegetable and animal oils and fats,Vegetable oils and fats,mapped,yes
+1050,Manufacture of dairy products,Dairy products,mapped,yes
+1061,Manufacture of grain mill products,Cereal products,mapped,yes
+1062,Manufacture of starch and starch products,Food products and feeds n.e.c.,mapped,yes
+1071,Manufacture of bakery products,Cereal products,mapped,yes
+1072,Manufacture of sugar,"Sugar refining; cocoa, chocolate and confectionery",mapped,yes
+1073,"Manufacture of cocoa, chocolate and sugar confectionery","Sugar refining; cocoa, chocolate and confectionery",mapped,yes
+1074,"Manufacture of macaroni, noodles, couscous and similar farinaceous products",Food products and feeds n.e.c.,mapped,yes
+1075,Manufacture of prepared meals and dishes,Food products and feeds n.e.c.,mapped,yes
+1079,Manufacture of other food products n.e.c.,Food products and feeds n.e.c.,mapped,yes
+1080,Manufacture of prepared animal feeds,Food products and feeds n.e.c.,mapped,yes
+1101,"Distilling, rectifying and blending of spirits",Alcoholic and other  beverages,mapped,yes
+1102,Manufacture of wines,Alcoholic and other  beverages,mapped,yes
+1103,Manufacture of malt liquors and malt,Alcoholic and other  beverages,mapped,yes
+1104,Manufacture of soft drinks; production of mineral waters and other bottled waters,Alcoholic and other  beverages,mapped,yes
+1200,Manufacture of tobacco products,Tobacco products,mapped,yes
+1311,Preparation and spinning of textile fibres,Textiles and clothing,mapped,yes
+1312,Weaving of textiles,Textiles and clothing,mapped,yes
+1313,Finishing of textiles,Textiles and clothing,mapped,yes
+1391,Manufacture of knitted and crocheted fabrics,Textiles and clothing,mapped,yes
+1392,"Manufacture of made-up textile articles, except apparel",Textiles and clothing,mapped,yes
+1393,Manufacture of carpets and rugs,Textiles and clothing,mapped,yes
+1394,"Manufacture of cordage, rope, twine and netting",Textiles and clothing,mapped,yes
+1399,Manufacture of other textiles n.e.c.,Textiles and clothing,mapped,yes
+1410,"Manufacture of wearing apparel, except fur apparel",Textiles and clothing,mapped,yes
+1420,Manufacture of articles of fur,Textiles and clothing,mapped,yes
+1430,Manufacture of knitted and crocheted apparel,Textiles and clothing,mapped,yes
+1511,Tanning and dressing of leather; dressing and dyeing of fur,Leather and footwear,mapped,yes
+1512,"Manufacture of luggage, handbags and the like, saddlery and harness",Leather and footwear,mapped,yes
+1520,Manufacture of footwear,Leather and footwear,mapped,yes
+1610,Sawmilling and planing of wood,Sawmill products,mapped,yes
+1621,Manufacture of veneer sheets and wood-based panels,Sawmill products,mapped,yes
+1622,Manufacture of builders' carpentry and joinery,Sawmill products,mapped,yes
+1623,Manufacture of wooden containers,Sawmill products,mapped,yes
+1629,"Manufacture of other products of wood; manufacture of articles of cork, straw and plaiting materials",Sawmill products,mapped,yes
+1701,"Manufacture of pulp, paper and paperboard",Pulp and paper,mapped,yes
+1702,Manufacture of corrugated paper and paperboard and of containers of paper and paperboard,Pulp and paper,mapped,yes
+1709,Manufacture of other articles of paper and paperboard,Pulp and paper,mapped,yes
+1811,Printing,Printing,mapped,yes
+1812,Service activities related to printing,Printing,mapped,yes
+1820,Reproduction of recorded media,Printing,mapped,yes
+1910,Manufacture of coke oven products,Coke oven products,mapped,yes
+1920,Manufacture of refined petroleum products,Refined petroleum products,mapped,yes
+2011,Manufacture of basic chemicals,Basic organic chemicals,1:n(GLORIA finer),yes
+2012,Manufacture of fertilizers and nitrogen compounds,Nitrogenous fertilizers,mapped,yes
+2013,Manufacture of plastics and synthetic rubber in primary forms,Basic petrochemical products,mapped,yes
+2021,Manufacture of pesticides and other agrochemical products,"Dyes, paints, glues, detergents and other chemical products",mapped,yes
+2022,"Manufacture of paints, varnishes and similar coatings, printing ink and mastics","Dyes, paints, glues, detergents and other chemical products",mapped,yes
+2023,"Manufacture of soap and detergents, cleaning and polishing preparations, perfumes, and toilet preparations","Dyes, paints, glues, detergents and other chemical products",mapped,yes
+2029,Manufacture of other chemical products n.e.c.,"Dyes, paints, glues, detergents and other chemical products",mapped,yes
+2030,Manufacture of man-made fibres,Basic organic chemicals,mapped,yes
+2100,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",Pharmaceuticals and medicinal products,mapped,yes
+2211,Manufacture of rubber tyres and tubes; retreading and rebuilding of rubber tyres,Rubber products,mapped,yes
+2219,Manufacture of other rubber products,Rubber products,mapped,yes
+2220,Manufacture of plastics products,Plastic products,mapped,yes
+2310,Manufacture of glass and glass products,Glass and other ceramics n.e.c.,mapped,yes
+2391,Manufacture of refractory products,Other non-metallic mineral products n.e.c.,mapped,yes
+2392,Manufacture of clay building materials,Clay building materials,mapped,yes
+2393,Manufacture of other porcelain and ceramic products,Glass and other ceramics n.e.c.,mapped,yes
+2394,"Manufacture of cement, lime and plaster","Cement, lime and plaster products",mapped,yes
+2395,"Manufacture of articles of concrete, cement and plaster",Other non-metallic mineral products n.e.c.,mapped,yes
+2396,"Cutting, shaping and finishing of stone",Other non-metallic mineral products n.e.c.,mapped,yes
+2399,Manufacture of other non-metallic mineral products n.e.c.,Other non-metallic mineral products n.e.c.,mapped,yes
+2410,Manufacture of basic iron and steel,Basic iron and steel,mapped,yes
+2420,Manufacture of basic precious and other non-ferrous metals,Basic non-ferrous metals n.e.c.,1:n(GLORIA finer),yes
+2431,Casting of iron and steel,Basic iron and steel,mapped,yes
+2432,Casting of non-ferrous metals,Basic non-ferrous metals n.e.c.,mapped,yes
+2511,Manufacture of structural metal products,Fabricated metal products,mapped,yes
+2512,"Manufacture of tanks, reservoirs and containers of metal",Fabricated metal products,mapped,yes
+2513,"Manufacture of steam generators, except central heating hot water boilers",Fabricated metal products,mapped,yes
+2520,Manufacture of weapons and ammunition,Fabricated metal products,mapped,yes
+2591,"Forging, pressing, stamping and roll-forming or metal; powder metallurgy",Fabricated metal products,mapped,yes
+2592,Treatment and coating of metals; machining,Fabricated metal products,mapped,yes
+2593,"Manufacture of cutlery, hand tools and general hardware",Fabricated metal products,mapped,yes
+2599,Manufacture of other fabricated metal products n.e.c.,Fabricated metal products,mapped,yes
+2610,Manufacture of electronic components and boards,Computers; electronic products; optical and precision instruments,mapped,yes
+2620,Manufacture of computers and peripheral equipment,Computers; electronic products; optical and precision instruments,mapped,yes
+2630,Manufacture of communications equipment,Computers; electronic products; optical and precision instruments,mapped,yes
+2640,Manufacture of consumer electronics,Computers; electronic products; optical and precision instruments,mapped,yes
+2651,"Manufacture of measuring, testing, navigating, and control equipment",Computers; electronic products; optical and precision instruments,mapped,yes
+2652,Manufacture of watches and clocks,Computers; electronic products; optical and precision instruments,mapped,yes
+2660,"Manufacture of irradiation, electromedical and electrotherapeutic equipment",Computers; electronic products; optical and precision instruments,mapped,yes
+2670,Manufacture of optical instruments and photographic equipment,Computers; electronic products; optical and precision instruments,mapped,yes
+2680,Manufacture of magnetic and optical media,Computers; electronic products; optical and precision instruments,mapped,yes
+2710,"Manufacture of electric motors, generators, transformers, and electricity distribution and control apparatus",Electrical equipment,mapped,yes
+2720,Manufacture of batteries and accumulators,Electrical equipment,mapped,yes
+2731,Manufacture of fibre optic cables,Electrical equipment,mapped,yes
+2732,Manufacture of other electronic and electric wires and cables,Electrical equipment,mapped,yes
+2733,Manufacture of wiring devices,Electrical equipment,mapped,yes
+2740,Manufacture of electric lighting equipment,Electrical equipment,mapped,yes
+2750,Manufacture of domestic appliances,Electrical equipment,mapped,yes
+2790,Manufacture of other electrical equipment,Electrical equipment,mapped,yes
+2811,"Manufacture of engines and turbines, except aircraft, vehicle and cycle engines",Machinery and equipment,mapped,yes
+2812,Manufacture of fluid power equipment,Machinery and equipment,mapped,yes
+2813,"Manufacture of other pumps, compressors, taps and valves",Machinery and equipment,mapped,yes
+2814,"Manufacture of bearings, gears, gearing and drive elements",Machinery and equipment,mapped,yes
+2815,"Manufacture of ovens, furnaces and furnace burners",Machinery and equipment,mapped,yes
+2816,Manufacture of lifting and handling equipment,Machinery and equipment,mapped,yes
+2817,Manufacture of office machinery and equipment (except computers and peripheral equipment),Machinery and equipment,mapped,yes
+2818,Manufacture of power-driven hand tools,Machinery and equipment,mapped,yes
+2819,Manufacture of other general-purpose machinery,Machinery and equipment,mapped,yes
+2821,Manufacture of agricultural and forestry machinery,Machinery and equipment,mapped,yes
+2822,Manufacture of metal-forming machinery and machine tools,Machinery and equipment,mapped,yes
+2823,Manufacture of machinery for metallurgy,Machinery and equipment,mapped,yes
+2824,"Manufacture of machinery for mining, quarrying and construction",Machinery and equipment,mapped,yes
+2825,"Manufacture of machinery for food, beverage and tobacco processing",Machinery and equipment,mapped,yes
+2826,"Manufacture of machinery for textile, apparel and leather production",Machinery and equipment,mapped,yes
+2829,Manufacture of other special-purpose machinery,Machinery and equipment,mapped,yes
+2910,Manufacture of motor vehicles,"Motor vehicles, trailers and semi-trailers",mapped,yes
+2920,Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers,"Motor vehicles, trailers and semi-trailers",mapped,yes
+2930,Manufacture of parts and accessories for motor vehicles,"Motor vehicles, trailers and semi-trailers",mapped,yes
+3011,Building of ships and floating structures,Other transport equipment,mapped,yes
+3012,Building of pleasure and sporting boats,Other transport equipment,mapped,yes
+3020,Manufacture of railway locomotives and rolling stock,Other transport equipment,mapped,yes
+3030,Manufacture of air and spacecraft and related machinery,Other transport equipment,mapped,yes
+3040,Manufacture of military fighting vehicles,Other transport equipment,mapped,yes
+3091,Manufacture of motorcycles,Other transport equipment,mapped,yes
+3092,Manufacture of bicycles and invalid carriages,Other transport equipment,mapped,yes
+3099,Manufacture of other transport equipment n.e.c.,Other transport equipment,mapped,yes
+3100,Manufacture of furniture,Furniture and other manufacturing n.e.c,mapped,yes
+3211,Manufacture of jewellery and related articles,Furniture and other manufacturing n.e.c,mapped,yes
+3212,Manufacture of imitation jewellery and related articles,Furniture and other manufacturing n.e.c,mapped,yes
+3220,Manufacture of musical instruments,Furniture and other manufacturing n.e.c,mapped,yes
+3230,Manufacture of sports goods,Furniture and other manufacturing n.e.c,mapped,yes
+3240,Manufacture of games and toys,Furniture and other manufacturing n.e.c,mapped,yes
+3250,Manufacture of medical and dental instruments and supplies,Furniture and other manufacturing n.e.c,mapped,yes
+3290,Other manufacturing n.e.c.,Furniture and other manufacturing n.e.c,mapped,yes
+3311,Repair of fabricated metal products,Repair and installation of machinery and equipment (service),mapped,yes
+3312,Repair of machinery,Repair and installation of machinery and equipment (service),mapped,yes
+3313,Repair of electronic and optical equipment,Repair and installation of machinery and equipment (service),mapped,yes
+3314,Repair of electrical equipment,Repair and installation of machinery and equipment (service),mapped,yes
+3315,"Repair of transport equipment, except motor vehicles",Repair and installation of machinery and equipment (service),mapped,yes
+3319,Repair of other equipment,Repair and installation of machinery and equipment (service),mapped,yes
+331X,"Repair of fabricated metal products, machinery and equipment",Repair and installation of machinery and equipment (service),mapped,yes
+3320,Installation of industrial machinery and equipment,Repair and installation of machinery and equipment (service),mapped,yes
+3510,"Electric power generation, transmission and distribution","Electric power generation, transmission and distribution",mapped,yes
+3520,Manufacture of gas; distribution of gaseous fuels through mains,Distribution of gaseous fuels through mains,mapped,yes
+3530,Steam and air conditioning supply,"Electric power generation, transmission and distribution",mapped,yes
+3600,"Water collection, treatment and supply","Water collection, treatment and supply; sewerage",mapped,yes
+3700,Sewerage,"Water collection, treatment and supply; sewerage",mapped,yes
+3811,Collection of non-hazardous waste,"Waste collection, treatment, and disposal",mapped,yes
+3812,Collection of hazardous waste,"Waste collection, treatment, and disposal",mapped,yes
+3821,Treatment and disposal of non-hazardous waste,"Waste collection, treatment, and disposal",mapped,yes
+3822,Treatment and disposal of hazardous waste,"Waste collection, treatment, and disposal",mapped,yes
+3830,Materials recovery,Materials recovery,mapped,yes
+3900,Remediation activities and other waste management services,"Waste collection, treatment, and disposal",mapped,yes
+4100,Construction of buildings,Building construction,mapped,yes
+4210,Construction of roads and railways,Civil engineering construction,mapped,yes
+4220,Construction of utility projects,Civil engineering construction,mapped,yes
+4290,Construction of other civil engineering projects,Civil engineering construction,mapped,yes
+4311,Demolition,Building construction,mapped,yes
+4312,Site preparation,Building construction,mapped,yes
+4321,Electrical installation,Building construction,mapped,yes
+4322,"Plumbing, hearing, and air-conditioning installation",Building construction,mapped,yes
+4329,Other construction installation,Building construction,mapped,yes
+4330,Building completion and finishing,Building construction,mapped,yes
+4390,Other specialized construction activities,Building construction,mapped,yes
+4510,Sale of motor vehicles,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4520,Maintenance and repair of motor vehicles,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4530,Sale of motor vehicle parts and accessories,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4540,"Sale, maintenance and repair of motorcycles and related parts and accessories",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4610,Wholesale on a fee or contract basis,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4620,Wholesale of agricultural raw materials and live animals,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4630,"Wholesale of food, beverages and tobacco",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4641,"Wholesale of textiles, clothing and footwear",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4649,Wholesale of other household goods,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4651,"Wholesale of computers, computer peripheral equipment and software",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4652,Wholesale of electronic and telecommunications equipment and parts,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4653,"Wholesale of agricultural machinery, equipment and supplies",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4659,Wholesale of other machinery and equipment,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4661,"Wholesale of solid, liquid and gaseous fuels and related products",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4662,Wholesale of metals and metal ores,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4663,"Wholesale of construction materials, hardware, plumbing and heating equipment and supplies",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4669,Wholesale of waste and scrap and other products n.e.c.,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4690,Non-specialized wholesale trade,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4711,"Retail sale in non-specialized stores with food, beverages or tobacco predominating",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4719,Other retail sale in non-specialized stores,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4721,Retail sale of food in specialized stores,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4722,Retail sale of beverages in specialized stores,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4723,Retail sale of tobacco products in specialized stores,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4730,Retail sale of automotive fuel in specialized stores,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4741,"Retail sale of computers, peripheral units, software and telecommunications equipment in specialized stores",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4742,Retail sale of audio and video equipment in specialized stores,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4751,Retail sale of textiles in specialized stores,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4752,"Retail sale of hardware, paints and glass in specialized stores",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4753,"Retail sale of carpets, rugs, wall and floor coverings in specialized stores",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4759,"Retail sale of electrical household appliances, furniture, lighting equipment and other household articles in specialized stores",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4761,"Retail sale of books, newspapers and stationary in specialized stores",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4762,Retail of music and video recordings in specialized stores,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4763,Retail sale of sporting equipment in specialized stores,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4764,Retail sale of games and toys in specialized stores,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4771,"Retail sale of clothing, footwear, and leather articles in specialized stores",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4772,"Retail sale of pharmaceutical and medical goods, cosmetic and toilet articles in specialized stores",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4773,Other retail sale of new goods in specialized stores,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4774,Retail sale of second-hand goods,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4781,"Retail sale via stalls and markets of food, beverages and tobacco products",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4782,"Retail sale via stalls and markets of textiles, clothing and footwear",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4789,Retail sale via stalls and markets of other goods,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4791,Retail sale via mail order houses or via Internet,Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4799,"Other retail sale not in stores, stalls or markets",Wholesale and retail trade; repair of motor vehicles and motorcycles,mapped,yes
+4911,"Passenger rail transport, interurban",Rail transport,mapped,yes
+4912,Freight rail transport,Rail transport,mapped,yes
+4921,Urban and suburban passenger land transport,Road transport,mapped,yes
+4922,Other passenger land transport,Road transport,mapped,yes
+4923,Freight transport by road,Road transport,mapped,yes
+4930,Transport via pipeline,Transport via pipeline,mapped,yes
+5011,Sea and coastal passenger water transport,Water transport,mapped,yes
+5012,Sea and coastal freight water transport,Water transport,mapped,yes
+5021,Inland passenger water transport,Water transport,mapped,yes
+5022,Inland freight water transport,Water transport,mapped,yes
+5110,Passenger air transport,Air transport,mapped,yes
+5120,Freight air transport,Air transport,mapped,yes
+5210,Warehousing and storage,Services to transport,mapped,yes
+5221,Service activities incidental to land transportation,Services to transport,mapped,yes
+5222,Service activities incidental to water transportation,Services to transport,mapped,yes
+5223,Service activities incidental to air transportation,Services to transport,mapped,yes
+5224,Cargo handling,Services to transport,mapped,yes
+5229,Other transportation support activities,Services to transport,mapped,yes
+5310,Postal activities,Postal and courier services,mapped,yes
+5320,Courier activities,Postal and courier services,mapped,yes
+5510,Short term accommodation activities,Hospitality,mapped,yes
+5520,"Camping grounds, recreational vehicle parks, and trailer parks",Hospitality,mapped,yes
+5590,Other accommodation,Hospitality,mapped,yes
+5610,Restaurants and mobile food service activities,Hospitality,mapped,yes
+5621,Event catering,Hospitality,mapped,yes
+5629,Other food service activities,Hospitality,mapped,yes
+5630,Beverage serving activities,Hospitality,mapped,yes
+5811,Book publishing,Publishing,mapped,yes
+5812,Publishing of directories and mailing lists,Publishing,mapped,yes
+5813,"Publishing of newspaper, journals and periodicals",Publishing,mapped,yes
+5819,Other publishing activities,Publishing,mapped,yes
+5820,Software publishing,Publishing,mapped,yes
+5911,"Motion picture, video and television programme production activities",Information services,mapped,yes
+5912,"Motion picture, video, and television programme post-production activities",Information services,mapped,yes
+5913,"Motion picture, video and television programme distribution activities",Information services,mapped,yes
+5914,Motion picture projection activities,Information services,mapped,yes
+5920,Sound recording and music publishing activities,Information services,mapped,yes
+6010,Radio broadcasting,Information services,mapped,yes
+6020,Television programming and broadcasting activities,Information services,mapped,yes
+6110,Wired telecommunications activities,Telecommunications,mapped,yes
+6120,Wireless telecommunications activities,Telecommunications,mapped,yes
+6130,Satellite telecommunications activities,Telecommunications,mapped,yes
+6190,Other telecommunications activities,Telecommunications,mapped,yes
+6201,Computer programming activities,Information services,mapped,yes
+6202,Computer consultancy and computer facilities management services,Information services,mapped,yes
+6209,Other information technology and computer service activities,Information services,mapped,yes
+6311,"Data processing, hosting and related activities",Information services,mapped,yes
+6312,Web portals,Information services,mapped,yes
+6391,News agency activities,Information services,mapped,yes
+6399,Other information service activities n.e.c.,Information services,mapped,yes
+6411,Central banking,Finance and insurance,mapped,yes
+6419,Other monetary intermediation,Finance and insurance,mapped,yes
+6420,Activities of holding companies,Finance and insurance,mapped,yes
+6430,"Trusts, funds and similar financial entities",Finance and insurance,mapped,yes
+6491,Financial leasing,Finance and insurance,mapped,yes
+6492,Other credit granting,Finance and insurance,mapped,yes
+6499,"Other financial service activities, except insurance and pension funding activities, n.e.c.",Finance and insurance,mapped,yes
+6511,Life insurance,Finance and insurance,mapped,yes
+6512,Non-life insurance,Finance and insurance,mapped,yes
+6520,Reinsurance,Finance and insurance,mapped,yes
+6530,Pension funding,Finance and insurance,mapped,yes
+6611,Administration of financial markets,Finance and insurance,mapped,yes
+6612,Security and commodity contracts brokerage,Finance and insurance,mapped,yes
+6619,Other monetary intermediation,Finance and insurance,mapped,yes
+6621,Risk and damage evaluation,Finance and insurance,mapped,yes
+6622,Activities of insurance agents and brokers,Finance and insurance,mapped,yes
+6629,Other activities auxiliary to insurance and pension funding,Finance and insurance,mapped,yes
+6630,Fund management activities,Finance and insurance,mapped,yes
+6810,Real estate activities with own or leased property,Property and real estate,mapped,yes
+6820,Real estate activities on a fee or contract basis,Property and real estate,mapped,yes
+6910,Legal activities,"Professional, scientific and technical services",mapped,yes
+6920,"Accounting, bookkeeping and auditing activities; tax consultancy","Professional, scientific and technical services",mapped,yes
+7010,Activities of head offices,"Professional, scientific and technical services",mapped,yes
+7020,Management consultancy activities,"Professional, scientific and technical services",mapped,yes
+7110,Architectural and engineering activities and related technical consultancy,"Professional, scientific and technical services",mapped,yes
+7120,Technical testing and analysis,"Professional, scientific and technical services",mapped,yes
+7210,Research and experimental development on natural sciences and engineering,"Professional, scientific and technical services",mapped,yes
+7220,Research and experimental development on social sciences and humanities,"Professional, scientific and technical services",mapped,yes
+7310,Advertising,"Professional, scientific and technical services",mapped,yes
+7320,Market research and public opinion polling,"Professional, scientific and technical services",mapped,yes
+7410,Specialized design activities,"Professional, scientific and technical services",mapped,yes
+7420,Photographic activities,"Professional, scientific and technical services",mapped,yes
+7490,"Other professional, scientific and technical activities n.e.c.","Professional, scientific and technical services",mapped,yes
+7500,Veterinary activities,"Professional, scientific and technical services",mapped,yes
+7710,Renting and leasing of motor vehicles,Administrative services,mapped,yes
+7721,Renting and leasing of recreational and sporting goods,Administrative services,mapped,yes
+7722,Renting of video tapes and disks,Administrative services,mapped,yes
+7729,Renting and leasing of other personal and household goods,Administrative services,mapped,yes
+7730,"Renting and leasing of other machinery, equipment and tangible goods",Administrative services,mapped,yes
+7740,"Leasing of intellectual property and similar products, except copyrighted works",Administrative services,mapped,yes
+7810,Activities of employment placement agencies,Administrative services,mapped,yes
+7820,Temporary employment agency activities,Administrative services,mapped,yes
+7830,Other human resources provision,Administrative services,mapped,yes
+7911,Travel agency activities,Administrative services,mapped,yes
+7912,Tour operator activities,Administrative services,mapped,yes
+7990,Other reservation service and related activities,Administrative services,mapped,yes
+8010,Private security activities,Administrative services,mapped,yes
+8020,Security systems service activities,Administrative services,mapped,yes
+8030,Investigation activities,Administrative services,mapped,yes
+8110,Combined facilities support services,Administrative services,mapped,yes
+8121,General cleaning of buildings,Administrative services,mapped,yes
+8129,Other building and industrial cleaning activities,Administrative services,mapped,yes
+8130,Landscape care and maintenance service activities,Administrative services,mapped,yes
+8211,Combined office administrative service activities,Administrative services,mapped,yes
+8219,"Photocopying, document preparation and other specialized office support activities",Administrative services,mapped,yes
+8220,Activities of call centres,Administrative services,mapped,yes
+8230,Organization of conventions and trade shows,Administrative services,mapped,yes
+8291,Activities of collection agencies and credit bureaus,Administrative services,mapped,yes
+8292,Packaging activities,Administrative services,mapped,yes
+8299,Other business support activities n.e.c.,Administrative services,mapped,yes
+8411,General public administration activities,Government; social security; defence; public order,mapped,yes
+8412,"Regulation of the activities of providing health care, education, cultural services and other social services, excluding social security",Government; social security; defence; public order,mapped,yes
+8413,Regulation of and contribution to more efficient operation of business,Government; social security; defence; public order,mapped,yes
+8421,Foreign affairs,Government; social security; defence; public order,mapped,yes
+8422,Defense activities,Government; social security; defence; public order,mapped,yes
+8423,Public order and safety activities,Government; social security; defence; public order,mapped,yes
+8430,Compulsory social security activities,Government; social security; defence; public order,mapped,yes
+8510,Pre-primary and primary education,Education,mapped,yes
+8521,Secondary education,Education,mapped,yes
+8522,Technical and vocational secondary education,Education,mapped,yes
+8530,Higher education,Education,mapped,yes
+8541,Sports and recreation education,Education,mapped,yes
+8542,Cultural education,Education,mapped,yes
+8549,Other education n.e.c.,Education,mapped,yes
+8550,Educational support services,Education,mapped,yes
+8610,Hospital activities,Human health and social work activities,mapped,yes
+8620,Medical and dental practice activities,Human health and social work activities,mapped,yes
+8690,Other human health activities,Human health and social work activities,mapped,yes
+8710,Residential nursing care facilities,Human health and social work activities,mapped,yes
+8720,"Residential care activities for mental retardation, mental health, and substance abuse",Human health and social work activities,mapped,yes
+8730,Residential care activities for the elderly and disabled,Human health and social work activities,mapped,yes
+8790,Other residential care activities,Human health and social work activities,mapped,yes
+8810,Social work activities without accommodation for the elderly and disabled,Human health and social work activities,mapped,yes
+8890,Other social work activities without accommodation,Human health and social work activities,mapped,yes
+9000,"Creative, arts and entertainment activities","Arts, entertainment and recreation",mapped,yes
+9101,Library and archives activities,"Arts, entertainment and recreation",mapped,yes
+9102,Museum activities and operation of historical sites and buildings,"Arts, entertainment and recreation",mapped,yes
+9103,Botanical and zoological gardens and nature reserves activities,"Arts, entertainment and recreation",mapped,yes
+9200,Gambling and betting activities,"Arts, entertainment and recreation",mapped,yes
+9311,Operation of sports facilities,"Arts, entertainment and recreation",mapped,yes
+9312,Activities of sports clubs,"Arts, entertainment and recreation",mapped,yes
+9319,Other sports activities,"Arts, entertainment and recreation",mapped,yes
+9321,Activities of amusement parks and theme parks,"Arts, entertainment and recreation",mapped,yes
+9329,Other amusement and recreation activities n.e.c.,"Arts, entertainment and recreation",mapped,yes
+9411,Activities of business and employers membership organizations,Other services,mapped,yes
+9412,Activities of professional membership organizations,Other services,mapped,yes
+9420,Activities of trade unions,Other services,mapped,yes
+9491,Activities of religious organizations,Other services,mapped,yes
+9492,Activities of political organizations,Other services,mapped,yes
+9499,Activities of other membership organizations n.e.c.,Other services,mapped,yes
+9511,Repair of computers and peripheral equipment,Other services,mapped,yes
+9512,Repair of communication equipment,Other services,mapped,yes
+9521,Repair of consumer electronics,Other services,mapped,yes
+9522,Repair of household appliances and home and garden equipment,Other services,mapped,yes
+9523,Repair of footwear and leather goods,Other services,mapped,yes
+9524,Repair of furniture and home furnishings,Other services,mapped,yes
+9529,Repair of other personal and household goods,Other services,mapped,yes
+9601,Washing and (dry-) cleaning of textile and fur products,Other services,mapped,yes
+9602,Hairdressing and other beauty treatment,Other services,mapped,yes
+9603,Funeral and related activities,Other services,mapped,yes
+9609,Other personal service activities n.e.c.,Other services,mapped,yes
+9700,Activities of households as employers of domestic personnel,Other services,mapped,yes
+9900,Activities of extraterritorial organizations and bodies,Other services,mapped,yes

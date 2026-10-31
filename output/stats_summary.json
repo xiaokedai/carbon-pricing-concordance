@@ -1,0 +1,10 @@
+{
+  "sic_codes": 1005,
+  "isic_rev4_codes": 420,
+  "gloria_sectors_reached": 96,
+  "sic_one_to_many_isic": 552,
+  "sic_one_to_many_gloria": 342,
+  "share_one_to_many_gloria": 0.3403,
+  "max_gloria_candidates": 18,
+  "note": "1,005 SIC codes = the 1,004 four-digit codes in the Census 1987 SIC -> NAICS concordance plus the Census 'Aux' (auxiliary establishments) row."
+}
