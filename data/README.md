@@ -16,44 +16,60 @@ repository root. If you keep the data somewhere else, change it there.
 | | |
 |---|---|
 | Source | Dolphin, G. and M. Merkle (2024), *Emissions-weighted Carbon Price: sources and methods*, Scientific Data 11:1017, DOI 10.1038/s41597-024-03121-6 |
-| Archive | Zenodo, https://doi.org/10.5281/zenodo.12181508 |
-| Version | v1, the record at that DOI. If the Zenodo page offers a newer version, still take the files from this one: a newer release can change the prices and so the results. |
-| Licence | See the Zenodo record. |
+| Archive | Zenodo record 12181508, DOI [10.5281/zenodo.12181508](https://zenodo.org/records/12181508), titled *Emissions-weighted Carbon Price* |
+| Version | The record published on 2024-06-20. It has no version label and is the only version of the dataset (concept DOI 10.5281/zenodo.12181507) as of November 2026. If Zenodo later adds a newer version, still take the files from this record: a new release can change the prices and so the results. |
+| Licence | CC BY-NC 4.0 |
 
-| File | Expected path | Contents | Used by |
-|---|---|---|---|
-| `ecp_gloria_edgar_industry_CO2.csv` | `data/ecp/ecp_gloria_edgar_industry_CO2.csv` | GLORIA industry × GLORIA region × year, 1990–2021, ≈96 MB. The scripts read the columns `year`, `country` (GLORIA region name), `sector` (GLORIA industry name) and `ecp_edgar` (emissions-weighted price, constant 2021 US$/tCO2e; `NA` means the sector has no emissions in that region-year). | `verify_crosswalk.py` (check 4), `price_dispersion.py`, `merge_firms_to_ecp.py` |
-| `ecp_CO2.csv` | `data/ecp/ecp_CO2.csv` | National/subnational jurisdiction × year, 1990–2022, ≈0.9 MB. | Not read by the current scripts. It is the economy-wide fallback for 2022 firm-years described in `docs/methodology.md`. |
+| File | Expected path | Size (bytes) | MD5 | Used by |
+|---|---|---|---|---|
+| `ecp_gloria_edgar_industry_CO2.csv` | `data/ecp/ecp_gloria_edgar_industry_CO2.csv` | 96,228,812 | `01f468d20a9203dbf847725291fbf54d` | `verify_crosswalk.py` (check 4), `price_dispersion.py`, `merge_firms_to_ecp.py` |
+| `ecp_CO2.csv` | `data/ecp/ecp_CO2.csv` | 852,001 | `027c6607588df23d5b08bd5f1c20fff5` | Not read by the current scripts. It is the economy-wide fallback for 2022 firm-years described in `docs/methodology.md`. |
+
+- `ecp_gloria_edgar_industry_CO2.csv`: GLORIA industry × GLORIA region × year, 1990–2021.
+  The scripts read the columns `year`, `country` (GLORIA region name), `sector` (GLORIA
+  industry name) and `ecp_edgar` (emissions-weighted price, constant 2021 US$/tCO2e; `NA`
+  means the sector has no emissions in that region-year).
+- `ecp_CO2.csv`: national/subnational jurisdiction × year, 1990–2022.
+
+The record has four other files (`ecp_gloria_oecd_industry_CO2.csv`,
+`ecp_gloria_edgar_finaldem_CO2.csv`, `ecp_gloria_oecd_finaldem_CO2.csv`,
+`ecp_sector_CO2.csv`); this project does not use them.
 
 ### How to get them
 
-1. Open https://doi.org/10.5281/zenodo.12181508 and download the two files above from
-   the record's file list. If the record gives an archive, extract these two files from it.
-2. Zenodo shows an MD5 checksum next to each file. Check the download against it, for
-   example `md5sum ecp_gloria_edgar_industry_CO2.csv` on Linux or `md5 …` on macOS; a
-   truncated download of the 96 MB file would otherwise give wrong numbers silently.
-3. Put them in `data/ecp/` (create the folder first):
+From the repository root:
 
-   ```bash
-   mkdir -p data/ecp
-   ```
+```bash
+mkdir -p data/ecp
+```
 
-   ```bash
-   mv ~/Downloads/ecp_gloria_edgar_industry_CO2.csv ~/Downloads/ecp_CO2.csv data/ecp/
-   ```
+```bash
+curl -L -o data/ecp/ecp_gloria_edgar_industry_CO2.csv "https://zenodo.org/api/records/12181508/files/ecp_gloria_edgar_industry_CO2.csv/content"
+```
 
-4. Run the pipeline from the repository root:
+```bash
+curl -L -o data/ecp/ecp_CO2.csv "https://zenodo.org/api/records/12181508/files/ecp_CO2.csv/content"
+```
 
-   ```bash
-   python3 run_all.py
-   ```
+Or download them by hand from the record page, https://zenodo.org/records/12181508, and
+move them into `data/ecp/`.
 
-   `run_all.py` checks that the file is in place before it starts. Without it, only the
-   steps that need no downloaded data can run:
+Check the downloads against the MD5 column above (`md5sum data/ecp/*.csv` on Linux,
+`md5 data/ecp/*.csv` on macOS). `run_all.py` also checks the industry file before it
+starts and stops if it does not match, because a truncated download of a 96 MB file
+would otherwise give wrong numbers without any error.
 
-   ```bash
-   python3 run_all.py --skip-ecp
-   ```
+Then run the pipeline:
+
+```bash
+python3 run_all.py
+```
+
+Without the ECP file, only the steps that need no downloaded data can run:
+
+```bash
+python3 run_all.py --skip-ecp
+```
 
 ## Crosswalk tables: `data/crosswalks/` (distributed)
 

@@ -11,10 +11,15 @@ first step that fails, says which step it was, and exits with status 1. A step t
 exits cleanly but does not write all of its expected output files also counts as
 failed.
 
-The pipeline uses no random numbers, so there is no seed to fix.
+The pipeline uses no random numbers, so there is no seed to fix. Two things about the
+machine can still change the outputs, and run_all.py pins both for the steps it runs:
+the machine's or user's matplotlibrc (Figure 1), and the CPU-specific sort routines
+numpy uses on x86-64 (the order of tied rows in Table 4). See step_env().
 """
 import argparse
+import hashlib
 import os
+import platform
 import shlex
 import subprocess
 import sys
@@ -28,6 +33,16 @@ YEAR = 2019                  # year of Tables 4-6 and Figure 1 (the README headl
 EXAMPLE_REGION = "Germany"   # jurisdiction of the worked examples in Table 6
 TESTED_PYTHON = (3, 12)      # requirements.txt was verified on this Python version
 REQUIREMENTS = config.repo_path("requirements.txt")
+
+# MD5 of ecp_gloria_edgar_industry_CO2.csv as published on Zenodo (record 12181508).
+ECP_INDUSTRY_MD5 = "01f468d20a9203dbf847725291fbf54d"
+
+# On x86-64 CPUs with AVX2 or AVX-512, numpy sorts with vectorised routines that put tied
+# values in a different order from its generic sort. price_dispersion.py sorts Table 4
+# with pandas' default (unstable) sort, so the order of its tied rows would then depend
+# on the CPU. Switching these routines off gives every x86-64 machine numpy's generic
+# sort, which reproduces the committed output/table4_*.csv. The names are numpy 2.4's.
+NUMPY_X86_VECTOR_SORTS = "X86_V3 X86_V4 AVX512_ICL AVX512_SPR"
 
 
 class Step:
@@ -72,7 +87,47 @@ def build_steps(skip_ecp):
     ]
 
 
-def preflight(skip_ecp):
+def pinned_versions():
+    """{package: version} from requirements.txt, without the platform-specific pins."""
+    pins = {}
+    if REQUIREMENTS.exists():
+        for line in REQUIREMENTS.read_text().splitlines():
+            line = line.split("#")[0].strip()
+            if line and ";" not in line:
+                name, version = line.split("==")
+                pins[name.strip()] = version.strip()
+    return pins
+
+
+def installed_version(name):
+    try:
+        return metadata.version(name)
+    except metadata.PackageNotFoundError:
+        return None
+
+
+def file_md5(path):
+    h = hashlib.md5()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def step_env(pins):
+    """Environment for every step: the current one plus the settings that pin the outputs."""
+    env = dict(os.environ, PYTHONUNBUFFERED="1")   # keep each step's output in order
+    # matplotlib's defaults for Figure 1, whatever matplotlibrc the machine or user has
+    env["MATPLOTLIBRC"] = str(config.MATPLOTLIBRC)
+    # the same numpy sort on every x86-64 CPU (see NUMPY_X86_VECTOR_SORTS); only for the
+    # pinned numpy, whose feature names these are
+    if (platform.machine().lower() in ("x86_64", "amd64")
+            and installed_version("numpy") == pins.get("numpy")):
+        env["NPY_DISABLE_CPU_FEATURES"] = NUMPY_X86_VECTOR_SORTS
+    return env
+
+
+def preflight(skip_ecp, pins, env):
     """Check Python, package versions and input files. Returns a list of fatal problems."""
     print(f"    Python {sys.version.split()[0]}")
     if sys.version_info[:2] != TESTED_PYTHON:
@@ -80,18 +135,10 @@ def preflight(skip_ecp):
               f"{'.'.join(map(str, TESTED_PYTHON))}; results may differ on this version.")
 
     mismatched = []
-    if REQUIREMENTS.exists():
-        for line in REQUIREMENTS.read_text().splitlines():
-            line = line.split("#")[0].strip()
-            if not line or ";" in line:      # skip blanks and platform-specific pins
-                continue
-            name, pinned = line.split("==")
-            try:
-                installed = metadata.version(name)
-            except metadata.PackageNotFoundError:
-                installed = "not installed"
-            if installed != pinned:
-                mismatched.append(f"{name} {installed} (requirements.txt: {pinned})")
+    for name, pinned in pins.items():
+        installed = installed_version(name) or "not installed"
+        if installed != pinned:
+            mismatched.append(f"{name} {installed} (requirements.txt: {pinned})")
     if mismatched:
         print("    WARNING: installed packages differ from requirements.txt; results may differ:")
         for m in mismatched:
@@ -99,6 +146,9 @@ def preflight(skip_ecp):
         print("      fix with: pip install -r requirements.txt")
     else:
         print("    packages match requirements.txt")
+    print(f"    matplotlib settings: {rel(config.MATPLOTLIBRC)} (matplotlib defaults)")
+    if "NPY_DISABLE_CPU_FEATURES" in env:
+        print("    numpy: generic sort on this x86-64 CPU (vectorised sorts off)")
 
     problems = []
     inputs = [config.MASTER, config.STRICT, config.STRICT_OVERRIDES, config.REGION_TO_FIC,
@@ -111,6 +161,14 @@ def preflight(skip_ecp):
         problems.append(f"missing raw data file {rel(config.ECP_INDUSTRY)}. Download it as described "
                         f"in data/README.md, or run `python3 run_all.py --skip-ecp` to run only "
                         f"the steps that need no downloaded data.")
+    elif not skip_ecp:
+        md5 = file_md5(config.ECP_INDUSTRY)
+        if md5 != ECP_INDUSTRY_MD5:
+            problems.append(f"{rel(config.ECP_INDUSTRY)} is not the published file (MD5 {md5}, "
+                            f"expected {ECP_INDUSTRY_MD5}). The download may be incomplete or "
+                            f"from another source; download it again as described in data/README.md.")
+        else:
+            print("    ECP file matches the published MD5")
     if not problems:
         print("    input files present")
     return problems
@@ -136,11 +194,12 @@ def main():
 
     steps = build_steps(a.skip_ecp)
     n = len(steps)
-    env = dict(os.environ, PYTHONUNBUFFERED="1")   # keep each step's output in order
+    pins = pinned_versions()
+    env = step_env(pins)
     t_all = time.time()
 
     print("==> [preflight] Python, packages and input files", flush=True)
-    problems = preflight(a.skip_ecp)
+    problems = preflight(a.skip_ecp, pins, env)
     if problems:
         print("!!! [preflight] FAILED", file=sys.stderr)
         for p in problems:

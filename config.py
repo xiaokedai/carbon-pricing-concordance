@@ -35,6 +35,9 @@ ECP_INDUSTRY = repo_path("data/ecp/ecp_gloria_edgar_industry_CO2.csv")
 # --- Example input ------------------------------------------------------------------
 DEMO_FIRMS = repo_path("examples/demo_firms.csv")
 
+# --- matplotlib settings for the figure (matplotlib's defaults; see the file) ----------
+MATPLOTLIBRC = repo_path("matplotlibrc")
+
 # --- Outputs --------------------------------------------------------------------------
 OUTPUT_DIR = repo_path("output")
 TABLE1 = repo_path("output/table1_multiplicity_by_division.csv")

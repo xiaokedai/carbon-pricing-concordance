@@ -48,7 +48,8 @@ docs/              methodology note
    ```
 
 2. Download the ECP file from https://doi.org/10.5281/zenodo.12181508 into `data/ecp/`.
-   `data/README.md` gives the version, the exact file names and where they go.
+   `data/README.md` gives the version, the download commands, the MD5 checksums and where
+   the files go.
 
 3. Run everything:
 
@@ -56,10 +57,18 @@ docs/              methodology note
    python3 run_all.py
    ```
 
-`run_all.py` checks the Python and package versions and the input files, then runs the
-five steps below in order. It prints a start and an end line for each step and stops at
-the first failure, naming the step. Without the ECP file, `python3 run_all.py --skip-ecp`
-runs the steps that need no downloaded data (Tables 1–3 and checks 1–3).
+`run_all.py` checks the Python and package versions and the input files (including the
+ECP file's MD5), then runs the five steps below in order. It prints a start and an end
+line for each step and stops at the first failure, naming the step. Without the ECP file,
+`python3 run_all.py --skip-ecp` runs the steps that need no downloaded data (Tables 1–3
+and checks 1–3).
+
+With the pinned versions, `run_all.py` reproduces every file in `output/` byte for byte.
+It sets two things for the steps so that the machine does not change the outputs: Figure 1
+is drawn with matplotlib's defaults (the repository's empty `matplotlibrc`), not with the
+machine's or user's settings; and on x86-64 CPUs numpy's AVX2/AVX-512 sort routines are
+switched off, because they order the tied rows of Table 4 differently. Running the
+scripts one at a time does not set these.
 
 The steps it runs, which also work one at a time:
 
