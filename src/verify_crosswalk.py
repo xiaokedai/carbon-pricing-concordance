@@ -16,8 +16,8 @@ import csv
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-CW = ROOT / "data" / "crosswalks"
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # repo root, for config.py
+from config import MASTER, STRICT
 
 
 def main():
@@ -26,8 +26,8 @@ def main():
     a = ap.parse_args()
     fails = 0
 
-    master = list(csv.DictReader(open(CW / "sic_naics_isic_gloria_master.csv", newline="")))
-    strict = list(csv.DictReader(open(CW / "sic_to_gloria_strict.csv", newline="")))
+    master = list(csv.DictReader(open(MASTER, newline="")))
+    strict = list(csv.DictReader(open(STRICT, newline="")))
 
     sics = {r["sic_1987"] for r in master}
     no_isic = {r["sic_1987"] for r in master if not r["isic_rev4"]}

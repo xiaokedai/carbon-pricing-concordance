@@ -1,6 +1,61 @@
 # Data
 
-## `crosswalks/` (distributed)
+The pipeline reads two kinds of input:
+
+- **Raw data** (`data/ecp/`): the Dolphin & Merkle (2024) carbon price files. They are
+  **not in this repository** (size and licence); download them as described below.
+  `.gitignore` keeps them out of git.
+- **Crosswalk tables** (`data/crosswalks/`): assembled for this project and distributed
+  with the repository. Nothing to download.
+
+Every path the scripts use is set in [`config.py`](../config.py), relative to the
+repository root. If you keep the data somewhere else, change it there.
+
+## Raw data: Dolphin & Merkle ECP files (download)
+
+| | |
+|---|---|
+| Source | Dolphin, G. and M. Merkle (2024), *Emissions-weighted Carbon Price: sources and methods*, Scientific Data 11:1017, DOI 10.1038/s41597-024-03121-6 |
+| Archive | Zenodo, https://doi.org/10.5281/zenodo.12181508 |
+| Version | v1, the record at that DOI. If the Zenodo page offers a newer version, still take the files from this one: a newer release can change the prices and so the results. |
+| Licence | See the Zenodo record. |
+
+| File | Expected path | Contents | Used by |
+|---|---|---|---|
+| `ecp_gloria_edgar_industry_CO2.csv` | `data/ecp/ecp_gloria_edgar_industry_CO2.csv` | GLORIA industry × GLORIA region × year, 1990–2021, ≈96 MB. The scripts read the columns `year`, `country` (GLORIA region name), `sector` (GLORIA industry name) and `ecp_edgar` (emissions-weighted price, constant 2021 US$/tCO2e; `NA` means the sector has no emissions in that region-year). | `verify_crosswalk.py` (check 4), `price_dispersion.py`, `merge_firms_to_ecp.py` |
+| `ecp_CO2.csv` | `data/ecp/ecp_CO2.csv` | National/subnational jurisdiction × year, 1990–2022, ≈0.9 MB. | Not read by the current scripts. It is the economy-wide fallback for 2022 firm-years described in `docs/methodology.md`. |
+
+### How to get them
+
+1. Open https://doi.org/10.5281/zenodo.12181508 and download the two files above from
+   the record's file list. If the record gives an archive, extract these two files from it.
+2. Zenodo shows an MD5 checksum next to each file. Check the download against it, for
+   example `md5sum ecp_gloria_edgar_industry_CO2.csv` on Linux or `md5 …` on macOS; a
+   truncated download of the 96 MB file would otherwise give wrong numbers silently.
+3. Put them in `data/ecp/` (create the folder first):
+
+   ```bash
+   mkdir -p data/ecp
+   ```
+
+   ```bash
+   mv ~/Downloads/ecp_gloria_edgar_industry_CO2.csv ~/Downloads/ecp_CO2.csv data/ecp/
+   ```
+
+4. Run the pipeline from the repository root:
+
+   ```bash
+   python3 run_all.py
+   ```
+
+   `run_all.py` checks that the file is in place before it starts. Without it, only the
+   steps that need no downloaded data can run:
+
+   ```bash
+   python3 run_all.py --skip-ecp
+   ```
+
+## Crosswalk tables: `data/crosswalks/` (distributed)
 
 | File | Rows | What it is |
 |---|---|---|
@@ -22,18 +77,19 @@ ECP industry file so that the final lookup cannot miss. The assembled table is
 distributed here; `src/verify_crosswalk.py` checks its internal consistency and,
 given the ECP file, that every GLORIA name resolves.
 
+These upstream files are not needed to run the pipeline, and the assembly step is not
+part of it:
+
+| Upstream source | Version | Where to get it |
+|---|---|---|
+| US Census Bureau, 1987 SIC → 2002 NAICS concordance | 1987 SIC, 2002 NAICS | https://www.census.gov/naics/concordances/ |
+| US Census Bureau, 2002 NAICS → 2007 NAICS concordance | 2002 → 2007 NAICS | same page |
+| US Census Bureau, 2007 NAICS → ISIC Rev. 4 concordance | 2007 NAICS, ISIC Rev. 4 | same page |
+| UN Statistics Division, ISIC Rev. 4 correspondence tables (cross-check) | ISIC Rev. 4 | https://unstats.un.org/unsd/classifications/Econ |
+| GLORIA sector definitions (Lenzen et al. 2017, *Economic Systems Research* 29(2); GLORIA release notes) | GLORIA 120-sector classification | Global MRIO Lab / ISA, University of Sydney |
+
 The 1,005 SIC codes are the 1,004 four-digit codes in the Census table plus the
 Census row for auxiliary establishments (`Aux`).
-
-## `ecp/` (not distributed — download)
-
-Dolphin, G. and M. Merkle (2024), *Emissions-weighted Carbon Price*, Scientific Data 11:1017.
-Data archive: Zenodo, https://doi.org/10.5281/zenodo.12181508
-
-Place these files in `data/ecp/`:
-
-- `ecp_gloria_edgar_industry_CO2.csv` — industry × GLORIA region × year, 1990–2021 (≈96 MB). Column `ecp_edgar` is the emissions-weighted price in constant 2021 US$/tCO2e; `NA` means the sector has no emissions in that region-year.
-- `ecp_CO2.csv` — national/subnational jurisdiction × year, 1990–2022 (≈0.9 MB).
 
 ## What is *not* here
 

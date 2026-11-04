@@ -1,6 +1,18 @@
-# Dolphin & Merkle ECP files (download from Zenodo; see data/README.md)
+# Raw data: Dolphin & Merkle ECP files (download from Zenodo; see data/README.md).
+# Never committed, wherever they are saved in the repository.
 data/ecp/
+ecp_gloria_edgar_industry_CO2.csv
+ecp_CO2.csv
+# downloaded archives
+data/**/*.zip
+data/**/*.tar.gz
+
 # large derived outputs
 output/firms_with_ecp.csv
+
+# Python
 __pycache__/
+.venv/
+venv/
+
 .DS_Store

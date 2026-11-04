@@ -17,9 +17,8 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-MASTER = ROOT / "data" / "crosswalks" / "sic_naics_isic_gloria_master.csv"
-STRICT = ROOT / "data" / "crosswalks" / "sic_to_gloria_strict.csv"
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # repo root, for config.py
+from config import MASTER, STRICT, rel
 
 
 def build_strict(master_path: Path):
@@ -64,7 +63,7 @@ def main():
         if bad or len(ref) != n:
             print(f"MISMATCH with distributed strict file: {len(bad)} codes differ", file=sys.stderr)
             sys.exit(1)
-        print("check passed: matches data/crosswalks/sic_to_gloria_strict.csv")
+        print(f"check passed: matches {rel(STRICT)}")
 
 
 if __name__ == "__main__":

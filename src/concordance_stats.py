@@ -12,13 +12,14 @@ Usage:
 """
 import csv
 import json
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-MASTER = ROOT / "data" / "crosswalks" / "sic_naics_isic_gloria_master.csv"
-OUT = ROOT / "output"
-OUT.mkdir(exist_ok=True)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # repo root, for config.py
+from config import MASTER, OUTPUT_DIR, STATS_SUMMARY, TABLE1, TABLE2, TABLE3
+
+OUTPUT_DIR.mkdir(exist_ok=True)
 
 # SIC 1987 divisions (Office of Management and Budget, 1987 SIC Manual)
 DIVISIONS = [
@@ -70,12 +71,12 @@ def main():
                    "one_to_many": mul[d], "share_one_to_many": round(mul[d] / tot[d], 3)})
     t1.append({"division": "All", "name": "All divisions", "sic_codes": n_sic,
                "one_to_many": len(multi_gl), "share_one_to_many": round(len(multi_gl) / n_sic, 3)})
-    _write(OUT / "table1_multiplicity_by_division.csv", t1)
+    _write(TABLE1, t1)
 
     # Table 2: distribution of candidate counts
     dist = Counter(len(set(v)) for v in gl.values())
     t2 = [{"n_gloria_candidates": k, "sic_codes": dist[k]} for k in sorted(dist)]
-    _write(OUT / "table2_candidate_count_distribution.csv", t2)
+    _write(TABLE2, t2)
 
     # Table 3: most ambiguous codes
     t3 = sorted(({"sic_1987": s, "sic_title": sic_title[s],
@@ -83,7 +84,7 @@ def main():
                   "candidates": "; ".join(sorted(set(v)))}
                  for s, v in gl.items()),
                 key=lambda r: (-r["n_gloria_candidates"], r["sic_1987"]))[:25]
-    _write(OUT / "table3_most_ambiguous_codes.csv", t3)
+    _write(TABLE3, t3)
 
     summary = {
         "sic_codes": n_sic,
@@ -96,7 +97,7 @@ def main():
         "note": "1,005 SIC codes = the 1,004 four-digit codes in the Census 1987 SIC -> NAICS "
                 "concordance plus the Census 'Aux' (auxiliary establishments) row.",
     }
-    (OUT / "stats_summary.json").write_text(json.dumps(summary, indent=2))
+    STATS_SUMMARY.write_text(json.dumps(summary, indent=2))
     for k, v in summary.items():
         print(f"{k}: {v}")
     print("\nTable 1 (one-to-many SIC codes by division):")

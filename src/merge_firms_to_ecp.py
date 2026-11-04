@@ -23,26 +23,27 @@ Usage:
 """
 import argparse
 import csv
+import sys
 from collections import defaultdict
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-CW = ROOT / "data" / "crosswalks"
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # repo root, for config.py
+from config import ECP_INDUSTRY, FIRMS_WITH_ECP, MASTER, REGION_TO_FIC, STRICT, STRICT_OVERRIDES
 
 
 def load(ecp_path):
     cands = defaultdict(set)
-    with open(CW / "sic_naics_isic_gloria_master.csv", newline="") as f:
+    with open(MASTER, newline="") as f:
         for r in csv.DictReader(f):
             cands[r["sic_1987"]].add(r["gloria_sector"])
     strict = {r["sic_1987"]: r["gloria_sector_primary"]
-              for r in csv.DictReader(open(CW / "sic_to_gloria_strict.csv", newline=""))}
-    ov = CW / "strict_overrides.csv"           # hand overrides of the modal rule (see data/README.md)
+              for r in csv.DictReader(open(STRICT, newline=""))}
+    ov = STRICT_OVERRIDES                      # hand overrides of the modal rule (see data/README.md)
     if ov.exists():
         for r in csv.DictReader(open(ov, newline="")):
             strict[r["sic_1987"]] = r["gloria_sector_override"]
     fic2reg = {r["fic"]: r["gloria_region"]
-               for r in csv.DictReader(open(CW / "gloria_region_to_fic_crosswalk.csv", newline=""))
+               for r in csv.DictReader(open(REGION_TO_FIC, newline=""))
                if r["fic"] and r["region_type"] != "aggregate"}
     price = {}
     with open(ecp_path, newline="") as f:
@@ -56,8 +57,8 @@ def load(ecp_path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("firms", help="CSV with sic, fic, year columns")
-    ap.add_argument("--ecp", default=str(ROOT / "data" / "ecp" / "ecp_gloria_edgar_industry_CO2.csv"))
-    ap.add_argument("--out", default=str(ROOT / "output" / "firms_with_ecp.csv"))
+    ap.add_argument("--ecp", default=str(ECP_INDUSTRY))
+    ap.add_argument("--out", default=str(FIRMS_WITH_ECP))
     ap.add_argument("--col-sic", default="sic")
     ap.add_argument("--col-fic", default="fic")
     ap.add_argument("--col-year", default="year")
