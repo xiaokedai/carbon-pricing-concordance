@@ -1,0 +1,4 @@
+# Empty on purpose. run_all.py points matplotlib at this file (MATPLOTLIBRC) so that
+# Figure 1 is drawn with matplotlib's own defaults, not with whatever matplotlibrc the
+# machine or the user has (a different default font, for example, changes the figure).
+# Any setting added here changes the figure.

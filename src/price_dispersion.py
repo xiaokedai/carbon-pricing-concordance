@@ -20,22 +20,24 @@ Usage:
 """
 import argparse
 import csv
+import sys
 from collections import defaultdict
 from pathlib import Path
 
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parents[1]
-CW = ROOT / "data" / "crosswalks"
-OUT = ROOT / "output"
-OUT.mkdir(exist_ok=True)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # repo root, for config.py
+from config import (ECP_INDUSTRY, MASTER, OUTPUT_DIR, STRICT, figure1_path, table4_path,
+                    table5_path, table6_path)
+
+OUTPUT_DIR.mkdir(exist_ok=True)
 
 EXAMPLE_SICS = ["3312", "1311", "2819", "3499", "2051", "3711", "4213", "7372", "2097"]
 
 
 def load_crosswalk():
-    master = pd.read_csv(CW / "sic_naics_isic_gloria_master.csv", dtype=str)
-    strict = pd.read_csv(CW / "sic_to_gloria_strict.csv", dtype=str)
+    master = pd.read_csv(MASTER, dtype=str)
+    strict = pd.read_csv(STRICT, dtype=str)
     cands = master.groupby("sic_1987")["gloria_sector"].agg(lambda s: sorted(set(s)))
     titles = master.groupby("sic_1987")["sic_title"].first()
     primary = strict.set_index("sic_1987")["gloria_sector_primary"]
@@ -57,7 +59,7 @@ def sic_division(sic: str) -> str:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--ecp", default=str(ROOT / "data" / "ecp" / "ecp_gloria_edgar_industry_CO2.csv"))
+    ap.add_argument("--ecp", default=str(ECP_INDUSTRY))
     ap.add_argument("--year", type=int, default=2019)
     ap.add_argument("--example-region", default="Germany")
     ap.add_argument("--priced-threshold", type=float, default=0.0,
@@ -106,7 +108,7 @@ def main():
         median_range_usd=("p_range", "median"),
         p90_range_usd=("p_range", lambda x: x.quantile(0.9)),
     ).reset_index().sort_values("share_sign_disagree", ascending=False)
-    g4.round(3).to_csv(OUT / f"table4_dispersion_by_jurisdiction_{a.year}.csv", index=False)
+    g4.round(3).to_csv(table4_path(a.year), index=False)
 
     # Table 5: pooled over pricing jurisdictions, by SIC division, conditional on any candidate priced
     d = df[df.any_priced == 1]
@@ -125,7 +127,7 @@ def main():
         "median_range_over_max": (d.p_range / d.p_max).median(),
     }])
     g5 = pd.concat([g5, allrow]).round(3)
-    g5.to_csv(OUT / f"table5_dispersion_pooled_{a.year}.csv", index=False)
+    g5.to_csv(table5_path(a.year), index=False)
 
     # Table 6: examples in one jurisdiction
     ex = []
@@ -136,7 +138,7 @@ def main():
             ex.append({"sic_1987": s, "sic_title": titles[s], "gloria_sector": c,
                        "is_strict_choice": int(c == primary[s]),
                        f"ecp_edgar_{a.example_region}_{a.year}": price.get((a.example_region, c))})
-    pd.DataFrame(ex).to_csv(OUT / f"table6_examples_{a.year}.csv", index=False)
+    pd.DataFrame(ex).to_csv(table6_path(a.year), index=False)
 
     # Figure 1: distribution of the price range across candidates (pairs with any priced candidate)
     try:
@@ -150,7 +152,7 @@ def main():
         ax.set_title("How far apart are the candidate prices for one-to-many SIC codes?", fontsize=10)
         ax.spines[["top", "right"]].set_visible(False)
         fig.tight_layout()
-        fig.savefig(OUT / f"figure1_price_range_{a.year}.png", dpi=200)
+        fig.savefig(figure1_path(a.year), dpi=200)
     except Exception as e:  # matplotlib optional
         print("figure skipped:", e)
 

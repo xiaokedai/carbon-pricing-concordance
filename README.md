@@ -13,6 +13,8 @@ No firm-level data are included; the project's results are not reported here.
 ## What is in the box
 
 ```
+run_all.py         runs every step below in order (see Reproduce)
+config.py          every input and output path, relative to the repository root
 data/crosswalks/   the concordance tables (distributed; see data/README.md for sources)
 data/ecp/          Dolphin & Merkle (2024) price files — download from Zenodo, not distributed
 src/               scripts, in the order you would run them
@@ -39,10 +41,38 @@ docs/              methodology note
 
 ## Reproduce
 
-```bash
-pip install -r requirements.txt
-# download the two ECP csv files from https://doi.org/10.5281/zenodo.12181508 into data/ecp/
+1. Install the pinned dependencies (verified on Python 3.12; the pins need 3.11+):
 
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Download the ECP file from https://doi.org/10.5281/zenodo.12181508 into `data/ecp/`.
+   `data/README.md` gives the version, the download commands, the MD5 checksums and where
+   the files go.
+
+3. Run everything:
+
+   ```bash
+   python3 run_all.py
+   ```
+
+`run_all.py` checks the Python and package versions and the input files (including the
+ECP file's MD5), then runs the five steps below in order. It prints a start and an end
+line for each step and stops at the first failure, naming the step. Without the ECP file,
+`python3 run_all.py --skip-ecp` runs the steps that need no downloaded data (Tables 1–3
+and checks 1–3).
+
+With the pinned versions, `run_all.py` reproduces every file in `output/` byte for byte.
+It sets two things for the steps so that the machine does not change the outputs: Figure 1
+is drawn with matplotlib's defaults (the repository's empty `matplotlibrc`), not with the
+machine's or user's settings; and on x86-64 CPUs numpy's AVX2/AVX-512 sort routines are
+switched off, because they order the tied rows of Table 4 differently. Running the
+scripts one at a time does not set these.
+
+The steps it runs, which also work one at a time:
+
+```bash
 python3 src/verify_crosswalk.py --ecp data/ecp/ecp_gloria_edgar_industry_CO2.csv
 python3 src/make_strict_crosswalk.py --check
 python3 src/concordance_stats.py
@@ -50,7 +80,8 @@ python3 src/price_dispersion.py --ecp data/ecp/ecp_gloria_edgar_industry_CO2.csv
 python3 src/merge_firms_to_ecp.py examples/demo_firms.csv --ecp data/ecp/ecp_gloria_edgar_industry_CO2.csv
 ```
 
-Python 3.9+; `pandas` and `matplotlib` are needed only for `price_dispersion.py`.
+`pandas` and `matplotlib` are needed only for `price_dispersion.py`. Nothing in the
+pipeline is random. File locations are set in `config.py`.
 
 ## Sources
 
